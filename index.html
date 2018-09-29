@@ -13,20 +13,27 @@
   
   
   <style> 
-    /* ---- reset ---- */
 
 body {
   margin: 0;
   font:normal 75% Arial, Helvetica, sans-serif;
   background: blue;
 }
-
+.mountains {
+    height: 100%;
+    width: 100%;
+    background: url("https://i.imgur.com/tyg3VRz.png");
+    z-index: inherit;
+    position: fixed;
+    background-position: 100% 100%;
+}
+      
 canvas {
+  background: linear-gradient(#13162da8 70%, #ffffff24 );
   display: block;
   vertical-align: bottom;
 }
 
-/* ---- particles.js container ---- */
 
 #particles-js {
   position: absolute;
@@ -38,7 +45,6 @@ canvas {
   background-position: 50% 50%;
 }
 
-/* ---- stats.js ---- */
 
 .count-particles{
   background: #000022;
@@ -78,13 +84,18 @@ canvas {
 
 </head><body>
 
-<div id="particles-js"></div>
+<body>
 
-<!-- stats - count particles -->
+<div id="particles-js"><canvas class="particles-js-canvas-el" width="1920" height="624" style="width: 100%; height: 100%;"></canvas></div>
 
+    <div class="mountains"</div>
 <script src="assets/particles.js"></script>
 <script src="assets/app.js"></script>
 
+
+
+
+</body>
 
 
 </body></html>
