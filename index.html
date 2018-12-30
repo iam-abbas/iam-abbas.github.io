@@ -1,100 +1,534 @@
 <!DOCTYPE html>
-<html><head><title>Abbas - Website</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<script src="assets/particles.js"></script>
-<script src="assets/app.js"></script>
-
-  
-  
-  <style> 
-@keyframes slideIn {
-  0% {
-    transform: translateY(200%);
-  }
-  200% {
-    transform: translateY(-100);
-  }
-}
-   
-body {
-  margin: 0;
-  font:normal 75% Arial, Helvetica, sans-serif;
-  background: black;
-}
-.name {
-    position: relative;
-    animation: 1s ease-in-out 0s 1 slideIn;
-    color: #fff;
-    font-family: 'Source Code Pro', monospace;
-    padding: 20px 100px;
-    font-size: 35px;
-    border: 2px solid #ffffff26;
-    width: 100px;
-    margin: auto;
-    top: 300px;
-}    
-.mountains {
-    height: 100%;
-    width: 100%;
-    background: url("https://i.imgur.com/tyg3VRz.png");
-    z-index: inherit;
-    position: fixed;
-    background-position: 100% 100%;
-    top: 50px;
-}
-      
-canvas {
-  background: linear-gradient(#13162da8 70%, #ffffff24 );
-  background: #252934;
-  display: block;
-  vertical-align: bottom;
-}
-
-
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-@media only screen and (max-width: 600px) {
-    .name {
-        top: 100px;
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+  <style>
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      49% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
     }
-   canvas {
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height:100%;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+    }
+    .first {
+      background: linear-gradient(#377cf97a, #00dcfff5), url(https://cdn57.androidauthority.net/wp-content/uploads/2018/02/Space-X-falcon-heavy-space-rocket-Quad-HD-wallpapers-4.jpg);
+      color: white;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      padding: 0 16px;
+
+    }
+    .second {
+      background: #f3f3f3;
+    }
+    .skillset {
+      width: 75%;
+      margin:auto;
+    }
+
+    .skills{
+      background-color:#ddd;
+      width:100%;
+      height:15px;
+      position:relative;
+      margin:50px;
+    }
+    .title-bar{
+      position:absolute;
+      top:-50px;
+      margin:5px
+    }
+    .skills span {
+      float:right;
+      margin-top:22px;
+      margin-right:5px;
+    }
+
+    .skillbar{
+      background-color:#6781ff;
+      width:0px;
+      height:15px;
+    }
+
+    .caret::after {
+      content: '';
+      display: inline-block;
+      background-color: cyan;
+      margin-left: 4px;
+      animation: blink 0.3s infinite;
+    }
+
+    .question {
+      font-size: 34px;
+      font-weight: 600;
+    }
+    .question.caret::after {
+      height: 24px;
+      width: 12px;
+    }
+
+    .answer {
+      font-size: 28px;
+      font-weight: 400;
+    }
+    .answer.caret::after {
+      height: 18px;
+      width: 9px;
+    }
+    .question1 {
+      font-size: 34px;
+      font-weight: 400;
+      margin: 20vh;
+z-index: 999;
+color: #fff;
+    }
+    .question1.caret1::after {
+      height: 24px;
+      width: 12px;
+    }
+
+    .heading {
+      text-decoration: underline;
+      line-height: 150px;
+      color: #1a575a;
+    }
+    .fancy-cards{
+      text-align: center;
+      margin: 80px auto;
+    }
+    .fancy-cards .fancy-card{
+      display: inline-block;
+      position: relative;
+      top: 40px;
+      left: 20px;
+      margin-right: 20px;
+      box-sizing: border-box;
+    }
+
+    .fancy-card .top1, .fancy-card .top2,
+    .fancy-card .middle,
+    .fancy-card .bottom{
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      width: 250px;
+      height: 250px;
+      transition: transform 300ms linear-out;
+    }
+    .fancy-card .top1{
+      z-index: 3;
+      transform: scale(1.0);
+      transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
+      background-image: url('https://i.imgur.com/TQepDHu.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0px 1px 3px rgba(25,25,25,0.30);
+    }
+    .fancy-card .top2{
+      z-index: 3;
+      transform: scale(1.0);
+      transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
+      background-image: url('https://i.imgur.com/HWMcX1V.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0px 1px 3px rgba(25,25,25,0.30);
+    }
+    .fancy-card .middle{
+      position: absolute;
+      background: #aaa;
+      top: 0px;
+      z-index: 2;
+      transform: rotate(0deg);
+      transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    .fancy-card .bottom{
+      position: absolute;
+      background: #ccc;
+      top: 0px;
+      z-index: 1;
+      transform: rotate(0deg);
+      transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .fancy-card .caption {
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.19);
+      padding: 15px 10px;
+      position: absolute;
+      color: #fff;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+    }
+    .fancy-card .caption .title{
+      color: #fff;
+      margin: 0px 0px 15px 0px;
+      font-size: 1.4rem;
+    }
+    .fancy-card .caption .button{
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      border: solid 1px #555;
+      padding: 7px 13px;
+      background-color: transparent;
+      transition: all 300ms ease-in;
+    }
+
+
+    /*hovering*/
+    .fancy-card:hover .top1 {
+      transform: scale(1.05);
+    }
+    .fancy-card:hover .top2 {
+      transform: scale(1.05);
+    }
+    .fancy-card:hover .middle{
+      transform: rotate(-7deg);
+      box-shadow: 1px 1px 2px rgba(74, 74, 74, 0.35);
+    }
+    .fancy-card:hover .bottom{
+      transform: rotate(7deg);
+      box-shadow: 1px 1px 2px rgba(113, 113, 113, 0.35);
+    }
+
+    .fancy-card:hover .button{
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      border: 0px;
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translateY(200%);
+      }
+      200% {
+        transform: translateY(-100);
+      }
+    }
+
+    .name {
+      position: relative;
+      animation: 1s ease-in-out 0s 1 slideIn;
+      color: #fff;
+      font-family: 'Source Code Pro', monospace;
+      padding: 20px 100px;
+      font-size: 35px;
+      border: 2px solid #ffffff26;
+      width: 100px;
+      margin: auto;
+      top: 300px;
+    }
+    .mountains {
+      height: 100%;
+      width: 100%;
+      background: url("https://i.imgur.com/tyg3VRz.png");
+      z-index: inherit;
+      position: relative;
+      background-position: 100% 100%;
+      top: 50px;
+    }
+
+    canvas {
+      background: linear-gradient(#13162da8 70%, #ffffff24 );
+      background: #252934;
+      display: block;
+      vertical-align: bottom;
+    }
+
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .name {
+        top: 100px;
+      }
+      canvas {
         background: linear-gradient(#13162da8 60%, #ffffff24 );
         background: #252934;
-    
-}
+
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container first">
+      <h1 class="question caret"></h1>
+      <p class="answer"></p>
+    </div>
+    <div class="container second">
+      <div class="heading"><h1>My Skills</h1></div>
+      <div class="skillset">
+        <div class="skills" data-percent="90%">
+          <div class="title-bar">
+            <h5>Web Design</h5>
+          </div>
+          <span>90%</span>
+          <div class="skillbar"></div>
+        </div>
+        <div class="skills" data-percent="75%">
+          <div class="title-bar">
+            <h5>Node.JS</h5>
+          </div>
+          <span>75%</span>
+          <div class="skillbar"></div>
+        </div>
+        <div class="skills" data-percent="65%">
+          <div class="title-bar">
+            <h5>Graphic Design</h5>
+          </div>
+          <span>65%</span>
+          <div class="skillbar"></div>
+        </div>
+        <div class="skills" data-percent="90%">
+          <div class="title-bar">
+            <h5>PHP</h5>
+          </div>
+          <span>90%</span>
+          <div class="skillbar"></div>
+        </div>
+        <div class="skills" data-percent="75%">
+          <div class="title-bar">
+            <h5>Python</h5>
+          </div>
+          <span>75%</span>
+          <div class="skillbar"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container third">
+      <div class="heading"><h1>My Projects</h1></div>
+      <div class="fancy-cards">
+        <div class="fancy-card">
+          <div class="top1">
+            <div class="caption">
+              <h3 class="title">HackSRM</h3>
+              <a href="http://hacksrm.tech" class="button">Know More </a>
+            </div>
+          </div>
+          <div class="middle"></div>
+          <div class="bottom"></div>
+        </div>
+        <div class="fancy-card">
+          <div class="top2">
+            <div class="caption">
+              <h3 class="title">TEDxSRMAP</h3>
+              <a href="http://tedxsrmuniversityap.com" class="button">Know More </a>
+            </div>
+          </div>
+          <div class="middle"></div>
+          <div class="bottom"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container fourth">
+
+      <div id="particles-js"><canvas class="particles-js-canvas-el" width="4096" height="1414" style="width: 100%; height: 100%;"></canvas></div>
+      <h1 class="question1 caret1"></h1>
+      <p class="answer1"></p>
+      <div class="mountains"></div>
+      <script src="http://abbasmj.me/assets/particles.js"></script>
+      <script src="http://abbasmj.me/assets/app.js"></script>
+
+    </div>
+
+    <script>
+      $(document).ready(function(){
+
+        startAnimation();
 
 
-    
-  </style>
 
-</head><body>
+        function startAnimation(){
+          jQuery('.skills').each(function(){
 
-<body>
+            jQuery(this).find('.skillbar').animate({
+              width:jQuery(this).attr('data-percent')
+            },2000);
 
-<div id="particles-js"><canvas class="particles-js-canvas-el" width="1920" height="624" style="width: 100%; height: 100%;"></canvas></div>
-<div class="name">ABBAS</div>
-    <div class="mountains"></div>
-<script src="assets/particles.js"></script>
-<script src="assets/app.js"></script>
+          });
+        }
+      });
 
+      class TypeWriter {
+        static get _quotes () {
+          return [
+          `Hey There, My name is Abbas|And I am a Full Stack Developer`
+          ]
+        }
 
+        static _write (quoteIndex, quoteCharacterIndex, isClearing, isAnswer) {
+          let question = document.querySelector('.question')
+          let answer = document.querySelector('.answer')
+          let quote = TypeWriter._quotes[quoteIndex]
 
+          // Determine if characters were being written or cleared
+          if (!isClearing) {
+            // Every single character will be written until there's none left
+            if (quoteCharacterIndex < quote.length) {
+              // The pipe '|' indicates that the next chars are for answer
+              if (quote.charAt(quoteCharacterIndex) === '|') {
+                isAnswer = true
+                quoteCharacterIndex++
+                setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
+              } else {
+                // Continue writing each character here
+                if (isAnswer) {
+                  question.classList.remove('caret')
+                  answer.classList.add('caret')
+                  answer.innerHTML = answer.textContent + quote.charAt(quoteCharacterIndex)
+                } else {
+                  answer.classList.remove('caret')
+                  question.classList.add('caret')
+                  question.innerHTML = question.textContent + quote.charAt(quoteCharacterIndex)
+                }
+                quoteCharacterIndex++
+                setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 75)
+              }
+            } else if (quoteCharacterIndex === quote.length) {
+              // If all characters were written out, then clear them
+              isClearing = true
+              setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 5000)
+            }
+          } else {
+            // Continue clearing characters here
+            if (question.textContent.length > 0 || answer.textContent.length > 0) {
+              if (answer.textContent.length > 0) {
+                answer.innerHTML = answer.textContent.substring(0, answer.textContent.length - 1)
+              } else if (question.textContent.length > 0) {
+                answer.classList.remove('caret')
+                question.classList.add('caret')
+                question.innerHTML = question.textContent.substring(0, question.textContent.length - 1)
+              }
+              setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 25)
+            } else {
+              // Reset if everything is cleared, then loop all over again
+              quoteIndex = (quoteIndex + 1) % TypeWriter._quotes.length
+              quoteCharacterIndex = 0
+              isClearing = false
+              isAnswer = false
+              setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
+            }
+          }
+        }
 
-</body>
+        /**
+        * Starts the typing effect.
+        */
+        static initialize () {
+          setTimeout(() => TypeWriter._write(0, 0, false, false), 3000)
+        }
+      }
 
+      TypeWriter.initialize()
 
-</body></html>
+      class TypeWriter1 {
+        static get _quotes () {
+          return [
+          `I am also very much into Astrophysics|And I am a Full Stack Developer`
+          ]
+        }
+
+        static _write (quoteIndex, quoteCharacterIndex, isClearing, isAnswer) {
+          let question = document.querySelector('.question1')
+          let answer = document.querySelector('.answer1')
+          let quote = TypeWriter1._quotes[quoteIndex]
+
+          // Determine if characters were being written or cleared
+          if (!isClearing) {
+            // Every single character will be written until there's none left
+            if (quoteCharacterIndex < quote.length) {
+              // The pipe '|' indicates that the next chars are for answer
+              if (quote.charAt(quoteCharacterIndex) === '|') {
+                isAnswer = true
+                quoteCharacterIndex++
+                setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
+              } else {
+                // Continue writing each character here
+                if (isAnswer) {
+                  question.classList.remove('caret1')
+                  answer.classList.add('caret1')
+                  answer.innerHTML = answer.textContent + quote.charAt(quoteCharacterIndex)
+                } else {
+                  answer.classList.remove('caret1')
+                  question.classList.add('caret1')
+                  question.innerHTML = question.textContent + quote.charAt(quoteCharacterIndex)
+                }
+                quoteCharacterIndex++
+                setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 75)
+              }
+            } else if (quoteCharacterIndex === quote.length) {
+              // If all characters were written out, then clear them
+              isClearing = true
+              setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 5000)
+            }
+          } else {
+            // Continue clearing characters here
+            if (question.textContent.length > 0 || answer.textContent.length > 0) {
+              if (answer.textContent.length > 0) {
+                answer.innerHTML = answer.textContent.substring(0, answer.textContent.length - 1)
+              } else if (question.textContent.length > 0) {
+                answer.classList.remove('caret1')
+                question.classList.add('caret1')
+                question.innerHTML = question.textContent.substring(0, question.textContent.length - 1)
+              }
+              setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 25)
+            } else {
+              // Reset if everything is cleared, then loop all over again
+              quoteIndex = (quoteIndex + 1) % TypeWriter1._quotes.length
+              quoteCharacterIndex = 0
+              isClearing = false
+              isAnswer = false
+              setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
+            }
+          }
+        }
+
+        /**
+        * Starts the typing effect.
+        */
+        static initialize () {
+          setTimeout(() => TypeWriter1._write(0, 0, false, false), 3000)
+        }
+      }
+
+      TypeWriter1.initialize()
+    </script>
+  </body>
+
+  </html>
