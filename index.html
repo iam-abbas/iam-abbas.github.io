@@ -1,534 +1,273 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
-  <style>
-    @keyframes blink {
-      0% {
-        opacity: 1;
-      }
-      49% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-    html,
-    body {
-      height: 100%;
-    }
+<title>HackSRM</title>
+<link rel="icon" type="image/png" href="favicon.png">
 
-    body {
-      margin: 0;
-    }
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height:100%;
-      font-family: 'Raleway', sans-serif;
-      text-align: center;
-    }
-    .first {
-      background: linear-gradient(#377cf97a, #00dcfff5), url(https://cdn57.androidauthority.net/wp-content/uploads/2018/02/Space-X-falcon-heavy-space-rocket-Quad-HD-wallpapers-4.jpg);
-      color: white;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      padding: 0 16px;
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126732353-1" type="8058bd7d4df28496fff0828c-text/javascript"></script>
+<script type="8058bd7d4df28496fff0828c-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    }
-    .second {
-      background: #f3f3f3;
-    }
-    .skillset {
-      width: 75%;
-      margin:auto;
-    }
+  gtag('config', 'UA-126732353-1');
+  </script>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="HackSRM 2018" />
+<meta property="og:description" content="HackSRM is a premium student led national level hackathon held in India that aims to gather the great student minds under one roof and solve potential real world problem through technology under 36 hours. " />
+<meta name="keywords" content="HackSRM, Hackathon, SRM, SRM AP, Hackathon India, UC Berkeley, MIT, Next Tech, IGDC">
+<meta property="og:url" content="http://hacksrm.github.io" />
+<meta property="og:image" content="assets/images/cover-1.png" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="8058bd7d4df28496fff0828c-text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="8058bd7d4df28496fff0828c-text/javascript"></script>
+<script src="https://rawgit.com/ironwallaby/delaunay/master/delaunay.js" type="8058bd7d4df28496fff0828c-text/javascript"></script>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<style>
+#stars {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 16rem;
+  opacity: 0.6;
+	height: 100vh;
+	z-index: 1;
+  pointer-events: none;
+}
+</style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar">
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#myPage"></a>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#about">ABOUT</a></li>
 
-    .skills{
-      background-color:#ddd;
-      width:100%;
-      height:15px;
-      position:relative;
-      margin:50px;
-    }
-    .title-bar{
-      position:absolute;
-      top:-50px;
-      margin:5px
-    }
-    .skills span {
-      float:right;
-      margin-top:22px;
-      margin-right:5px;
-    }
+<li><a href="#SPONSORS">SPONSORS</a></li>
+<li><a href="#ORGANIZERS">ORGANIZERS</a></li>
+<li><a href="#contact">CONTACT</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-    .skillbar{
-      background-color:#6781ff;
-      width:0px;
-      height:15px;
-    }
+<canvas id="stars" width="300" height="300"></canvas>
+<div id="large-header" class="large-header">
+<canvas id="demo-canvas"></canvas>
+</div> <div class="jumbotron text-center">
+<img src="assets/images/logo.png" class="logo" />
+<br>
+<p>
+<h3>KICKSTART | HACK | LEAD</h3>
+</p>
+<p>
+<h3>FEBRUARY 2019 | SRM AMARAVATI | NEXT TECH LAB AP<h3>
+</p>
+<br>
+<p>
 
-    .caret::after {
-      content: '';
-      display: inline-block;
-      background-color: cyan;
-      margin-left: 4px;
-      animation: blink 0.3s infinite;
-    }
+<center><a href="https://hacksrmapuniv.hackerearth.com/" style="text-decoration: none; color: inherit"><button type="button" class="btn btn-success BTN-LG"> REGISTER NOW</button></center></a></center>
+</div>
 
-    .question {
-      font-size: 34px;
-      font-weight: 600;
-    }
-    .question.caret::after {
-      height: 24px;
-      width: 12px;
-    }
+<div id="about" class="container-fluid bg-white">
+<div class="row">
+<div class="col-sm-8">
+<h2>About HackSRM </h2>
+<h4>Welcome to HackSRM! HackSRM is a premium student led national level hackathon held in
+India that aims to gather the great student minds under one roof and solve potential
+real world problem through technology under 36 hours. We belong to the technological
+hub of the country where marvels of innovation and creativity have always been
+celebrated, HackSRM is one such celebration. HackSRM is a platform for young geniuses
+to not only exercise their skills to the topmost level but also to build a better
+tomorrow by ideating, constructing and innovating vast solutions.
+</h4>
+<h2>Why HackSRM </h2>
+<h4>HackSRM is the perfect blend of imagination, novelty and fun. The 36 hour non-stop
+technical festival will host an amazing panel of speakers, sponsors and swag ;). With
+exciting goodies, you are destined to have a mindful of pure genius. If this is
+your first ever hackathon, we will make sure you have an enriching and memorable
+experience that you will cherish for days to come.
+</h4>
+<h4> So join us on this path of epicness! </h4>
+</div>
+</div>
+</div>
+<div id="SPONSORS" class="container-fluid">
+<div class="text-center">
+<h2 style="font-size: 50  px">SPONSORS</h2>
+<div class="row text-center slideanim">
+<div class="col-sm-4">
+<div class="thumbnail">.
+<a href="https://wolfram.com/"><img src="assets/images/sponsors/wolfram.png" alt="Wolfram" width="400" height="300"></a>
+<p><strong>Wolfram</strong></p>
+<p></p>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="thumbnail">
+<a href="https://www.jetbrains.com"><img src="assets/images/sponsors/jetbrains.png" alt="JetBrains" style="height : 200px ; width : auto"></a>
+<p><strong>JetBrains</strong></p>
+<p></p>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="thumbnail">
+<a href="https://nimblebox.ai/">
+<img src="assets/images/sponsors/nimblebox.png" alt="NimbleBox.ai" width="400" height="300"></a>
+<p><strong>NimbleBox.ai</strong></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="SPONSORS" class="container-fluid">
+<div class="text-center">
+<h2></h2>
+<div class="row text-center slideanim">
+<div class="col-sm-4">
+<div class="thumbnail">
+<a href="https://www.hackerearth.com/challenges/">
+<img src="assets/images/sponsors/hackerearth.png" alt="HackerEarth" width="400" height="300"></a>
+<p><strong>HackerEarth</strong></p>
+<p></p>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="thumbnail">
+<a href="https://get.tech/">
+<img src="assets/images/sponsors/techdom.png" alt=".tech Domains" style="height : 150px ; width : auto"></a>
+<p><strong>.tech Domains</strong></p>
+<p></p>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="thumbnail">
+<img src="" alt="" width="400" height="300">
+<p><strong></strong></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    .answer {
-      font-size: 28px;
-      font-weight: 400;
-    }
-    .answer.caret::after {
-      height: 18px;
-      width: 9px;
-    }
-    .question1 {
-      font-size: 34px;
-      font-weight: 400;
-      margin: 20vh;
-z-index: 999;
-color: #fff;
-    }
-    .question1.caret1::after {
-      height: 24px;
-      width: 12px;
-    }
+<div id="ORGANIZERS" class="container-fluid text-center ">
+<h2>About The Organizers</h2><br>
+<h4>Organized by the students who have consistently conquered national and international
+hackathons like HackMIT, HackIIITD, Hack Harvard, <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="17477b766e6474766772575572657c727b726e">[email&#160;protected]</a>, HINT, IGDC by Kamk
+University, Robotics Challenge at IIT Roorkee and countless more, are putting the
+ingredients together to conduct this one of its kind event. Institutes like QS Silver
+Awardee, Next Tech Lab, the ACM Student Chapter and Ennovab: Entrepreneurial Innovation Lab,
+powered by SCET, University of California, Berkeley are also actively involved to
+realize the largest hackathon in the country.
+</h4>
+<h2>Organized By </h2><br>
+<div class="row text-center slideanim">
+<div class="col-sm-2"> </div>
+<div class="col-sm-2">
+<div class="thumbnail">
+<img src="assets/images/srml.png" alt="SRM University, AP" style="height : 200 ; width : auto">
+<p><strong>SRM University AP</strong></p>
+</div>
+</div>
+<div class="col-sm-2"> </div>
+<div class="col-sm-2"> </div>
+<div class="col-sm-2">
+<div class="thumbnail">
+<img src="assets/images/ntl.png" alt="Next Tech Lab AP">
+<p><strong>Next Tech Lab</strong></p>
+</div>
+</div>
+</div>
+<h2>In Association With</h2><br>
+<div class="row text-center slideanim">
+<div class="col-sm-2">
+<div class="thumbnail">
+<img src="assets/images/ennov.jpeg" alt="Ennovab: Entrepreneurial Innovation Lab">
+<p><strong>Ennovab: Entrepreneurial Innovation Lab</strong></p>
+</div>
+</div>
+<div class="col-sm-1"></div>
+<div class="col-sm-2">
+<div class="thumbnail">
+<img src="assets/images/acm.png" alt="SRM University AP ACM Student Chapter">
+<p><strong>SRM University AP ACM Student Chapter</strong></p>
+</div>
+</div>
+<div class="col-sm-1"></div>
+<div class="col-sm-2">
+<div class="thumbnail">
+<img src="assets/images/moz.png" alt="SRM AP MozClub">
+<p><strong>SRM AP MozClub</strong></p>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="thumbnail">
+<img src="assets/images/pydata.png" alt="PyData Amaravati">
+<p><strong>
+<p>PyData Amaravati</p>
+</strong></p>
+</div>
+</div>
+</div><br>
 
-    .heading {
-      text-decoration: underline;
-      line-height: 150px;
-      color: #1a575a;
-    }
-    .fancy-cards{
-      text-align: center;
-      margin: 80px auto;
-    }
-    .fancy-cards .fancy-card{
-      display: inline-block;
-      position: relative;
-      top: 40px;
-      left: 20px;
-      margin-right: 20px;
-      box-sizing: border-box;
-    }
+<div id="contact" class="container-fluid bg-grey">
+<h2 class="text-center">CONTACT</h2>
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<p>
+<h2>Contact us and we'll get back to you within 24 hours</h2>
+<p><span class="glyphicon glyphicon-map-marker"></span>
+<font color="black"> SRM University, AP - Amaravati</font>
+</p>
+<p><span class="glyphicon glyphicon-phone"></span>
+<font color="black"> +91 8699415122</font>
+</p>
+<p><span class="glyphicon glyphicon-envelope"></span>
+<font color="black"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563e37353d25243b6466676e16313b373f3a7835393b">[email&#160;protected]</a></font>
+</p>
+</div>
+</div>
+<a href="#myPage" title="To Top">
+<span class="glyphicon glyphicon-chevron-up" style="font-size:24px"></span>
+</a>
+</div>
 
-    .fancy-card .top1, .fancy-card .top2,
-    .fancy-card .middle,
-    .fancy-card .bottom{
-      position: relative;
-      border-radius: 3px;
-      overflow: hidden;
-      width: 250px;
-      height: 250px;
-      transition: transform 300ms linear-out;
-    }
-    .fancy-card .top1{
-      z-index: 3;
-      transform: scale(1.0);
-      transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
-      background-image: url('https://i.imgur.com/TQepDHu.jpg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0px 1px 3px rgba(25,25,25,0.30);
-    }
-    .fancy-card .top2{
-      z-index: 3;
-      transform: scale(1.0);
-      transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
-      background-image: url('https://i.imgur.com/HWMcX1V.jpg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0px 1px 3px rgba(25,25,25,0.30);
-    }
-    .fancy-card .middle{
-      position: absolute;
-      background: #aaa;
-      top: 0px;
-      z-index: 2;
-      transform: rotate(0deg);
-      transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    }
-    .fancy-card .bottom{
-      position: absolute;
-      background: #ccc;
-      top: 0px;
-      z-index: 1;
-      transform: rotate(0deg);
-      transition: transform 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    }
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="8058bd7d4df28496fff0828c-text/javascript">
+                  $(document).ready(function () {
+                    $("a[href='#myPage']").each(function(){
+                      $(this).click(function(){
+                        $('html,body').animate({ scrollTop: 0 }, 900);
+                        return false;
+                      });
+                    });
 
-    .fancy-card .caption {
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.19);
-      padding: 15px 10px;
-      position: absolute;
-      color: #fff;
-      bottom: 0px;
-      left: 0px;
-      width: 100%;
-    }
-    .fancy-card .caption .title{
-      color: #fff;
-      margin: 0px 0px 15px 0px;
-      font-size: 1.4rem;
-    }
-    .fancy-card .caption .button{
-      display: inline-block;
-      color: #fff;
-      text-decoration: none;
-      border: solid 1px #555;
-      padding: 7px 13px;
-      background-color: transparent;
-      transition: all 300ms ease-in;
-    }
+                    $(window).scroll(function () {
+                      $(".slideanim").each(function () {
+                        var pos = $(this).offset().top;
 
-
-    /*hovering*/
-    .fancy-card:hover .top1 {
-      transform: scale(1.05);
-    }
-    .fancy-card:hover .top2 {
-      transform: scale(1.05);
-    }
-    .fancy-card:hover .middle{
-      transform: rotate(-7deg);
-      box-shadow: 1px 1px 2px rgba(74, 74, 74, 0.35);
-    }
-    .fancy-card:hover .bottom{
-      transform: rotate(7deg);
-      box-shadow: 1px 1px 2px rgba(113, 113, 113, 0.35);
-    }
-
-    .fancy-card:hover .button{
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-      border: 0px;
-    }
-    @keyframes slideIn {
-      0% {
-        transform: translateY(200%);
-      }
-      200% {
-        transform: translateY(-100);
-      }
-    }
-
-    .name {
-      position: relative;
-      animation: 1s ease-in-out 0s 1 slideIn;
-      color: #fff;
-      font-family: 'Source Code Pro', monospace;
-      padding: 20px 100px;
-      font-size: 35px;
-      border: 2px solid #ffffff26;
-      width: 100px;
-      margin: auto;
-      top: 300px;
-    }
-    .mountains {
-      height: 100%;
-      width: 100%;
-      background: url("https://i.imgur.com/tyg3VRz.png");
-      z-index: inherit;
-      position: relative;
-      background-position: 100% 100%;
-      top: 50px;
-    }
-
-    canvas {
-      background: linear-gradient(#13162da8 70%, #ffffff24 );
-      background: #111931;
-      display: block;
-      vertical-align: bottom;
-    }
-
-
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: url("");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-
-    @media only screen and (max-width: 600px) {
-      .name {
-        top: 100px;
-      }
-      canvas {
-        background: linear-gradient(#13162da8 60%, #ffffff24 );
-        background: #252934;
-
-      }
-
-    </style>
-
-  </head>
-  <body>
-
-    <div class="container first">
-      <h1 class="question caret"></h1>
-      <p class="answer"></p>
-    </div>
-    <div class="container second">
-      <div class="heading"><h1>My Skills</h1></div>
-      <div class="skillset">
-        <div class="skills" data-percent="90%">
-          <div class="title-bar">
-            <h5>Web Design</h5>
-          </div>
-          <span>90%</span>
-          <div class="skillbar"></div>
-        </div>
-        <div class="skills" data-percent="75%">
-          <div class="title-bar">
-            <h5>Node.JS</h5>
-          </div>
-          <span>75%</span>
-          <div class="skillbar"></div>
-        </div>
-        <div class="skills" data-percent="65%">
-          <div class="title-bar">
-            <h5>Graphic Design</h5>
-          </div>
-          <span>65%</span>
-          <div class="skillbar"></div>
-        </div>
-        <div class="skills" data-percent="90%">
-          <div class="title-bar">
-            <h5>PHP</h5>
-          </div>
-          <span>90%</span>
-          <div class="skillbar"></div>
-        </div>
-        <div class="skills" data-percent="75%">
-          <div class="title-bar">
-            <h5>Python</h5>
-          </div>
-          <span>75%</span>
-          <div class="skillbar"></div>
-        </div>
-
-      </div>
-    </div>
-    <div class="container third">
-      <div class="heading"><h1>My Projects</h1></div>
-      <div class="fancy-cards">
-        <div class="fancy-card">
-          <div class="top1">
-            <div class="caption">
-              <h3 class="title">HackSRM</h3>
-              <a href="http://hacksrm.tech" class="button">Know More </a>
-            </div>
-          </div>
-          <div class="middle"></div>
-          <div class="bottom"></div>
-        </div>
-        <div class="fancy-card">
-          <div class="top2">
-            <div class="caption">
-              <h3 class="title">TEDxSRMAP</h3>
-              <a href="http://tedxsrmuniversityap.com" class="button">Know More </a>
-            </div>
-          </div>
-          <div class="middle"></div>
-          <div class="bottom"></div>
-        </div>
-      </div>
-    </div>
-    <div class="container fourth">
-
-      <div id="particles-js"><canvas class="particles-js-canvas-el" width="4096" height="1414" style="width: 100%; height: 100%;"></canvas></div>
-      <h1 class="question1 caret1"></h1>
-      <p class="answer1"></p>
-      <div class="mountains"></div>
-      <script src="http://abbasmj.me/assets/particles.js"></script>
-      <script src="http://abbasmj.me/assets/app.js"></script>
-
-    </div>
-
-    <script>
-      $(document).ready(function(){
-
-        startAnimation();
-
-
-
-        function startAnimation(){
-          jQuery('.skills').each(function(){
-
-            jQuery(this).find('.skillbar').animate({
-              width:jQuery(this).attr('data-percent')
-            },2000);
-
-          });
-        }
-      });
-
-      class TypeWriter {
-        static get _quotes () {
-          return [
-          `Hey There, My name is Abbas|And I am a Full Stack Developer`
-          ]
-        }
-
-        static _write (quoteIndex, quoteCharacterIndex, isClearing, isAnswer) {
-          let question = document.querySelector('.question')
-          let answer = document.querySelector('.answer')
-          let quote = TypeWriter._quotes[quoteIndex]
-
-          // Determine if characters were being written or cleared
-          if (!isClearing) {
-            // Every single character will be written until there's none left
-            if (quoteCharacterIndex < quote.length) {
-              // The pipe '|' indicates that the next chars are for answer
-              if (quote.charAt(quoteCharacterIndex) === '|') {
-                isAnswer = true
-                quoteCharacterIndex++
-                setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
-              } else {
-                // Continue writing each character here
-                if (isAnswer) {
-                  question.classList.remove('caret')
-                  answer.classList.add('caret')
-                  answer.innerHTML = answer.textContent + quote.charAt(quoteCharacterIndex)
-                } else {
-                  answer.classList.remove('caret')
-                  question.classList.add('caret')
-                  question.innerHTML = question.textContent + quote.charAt(quoteCharacterIndex)
-                }
-                quoteCharacterIndex++
-                setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 75)
-              }
-            } else if (quoteCharacterIndex === quote.length) {
-              // If all characters were written out, then clear them
-              isClearing = true
-              setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 5000)
-            }
-          } else {
-            // Continue clearing characters here
-            if (question.textContent.length > 0 || answer.textContent.length > 0) {
-              if (answer.textContent.length > 0) {
-                answer.innerHTML = answer.textContent.substring(0, answer.textContent.length - 1)
-              } else if (question.textContent.length > 0) {
-                answer.classList.remove('caret')
-                question.classList.add('caret')
-                question.innerHTML = question.textContent.substring(0, question.textContent.length - 1)
-              }
-              setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 25)
-            } else {
-              // Reset if everything is cleared, then loop all over again
-              quoteIndex = (quoteIndex + 1) % TypeWriter._quotes.length
-              quoteCharacterIndex = 0
-              isClearing = false
-              isAnswer = false
-              setTimeout(() => TypeWriter._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
-            }
-          }
-        }
-
-        /**
-        * Starts the typing effect.
-        */
-        static initialize () {
-          setTimeout(() => TypeWriter._write(0, 0, false, false), 3000)
-        }
-      }
-
-      TypeWriter.initialize()
-
-      class TypeWriter1 {
-        static get _quotes () {
-          return [
-          `I am also very much into Astrophysics|And I am a Full Stack Developer`
-          ]
-        }
-
-        static _write (quoteIndex, quoteCharacterIndex, isClearing, isAnswer) {
-          let question = document.querySelector('.question1')
-          let answer = document.querySelector('.answer1')
-          let quote = TypeWriter1._quotes[quoteIndex]
-
-          // Determine if characters were being written or cleared
-          if (!isClearing) {
-            // Every single character will be written until there's none left
-            if (quoteCharacterIndex < quote.length) {
-              // The pipe '|' indicates that the next chars are for answer
-              if (quote.charAt(quoteCharacterIndex) === '|') {
-                isAnswer = true
-                quoteCharacterIndex++
-                setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
-              } else {
-                // Continue writing each character here
-                if (isAnswer) {
-                  question.classList.remove('caret1')
-                  answer.classList.add('caret1')
-                  answer.innerHTML = answer.textContent + quote.charAt(quoteCharacterIndex)
-                } else {
-                  answer.classList.remove('caret1')
-                  question.classList.add('caret1')
-                  question.innerHTML = question.textContent + quote.charAt(quoteCharacterIndex)
-                }
-                quoteCharacterIndex++
-                setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 75)
-              }
-            } else if (quoteCharacterIndex === quote.length) {
-              // If all characters were written out, then clear them
-              isClearing = true
-              setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 5000)
-            }
-          } else {
-            // Continue clearing characters here
-            if (question.textContent.length > 0 || answer.textContent.length > 0) {
-              if (answer.textContent.length > 0) {
-                answer.innerHTML = answer.textContent.substring(0, answer.textContent.length - 1)
-              } else if (question.textContent.length > 0) {
-                answer.classList.remove('caret1')
-                question.classList.add('caret1')
-                question.innerHTML = question.textContent.substring(0, question.textContent.length - 1)
-              }
-              setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 25)
-            } else {
-              // Reset if everything is cleared, then loop all over again
-              quoteIndex = (quoteIndex + 1) % TypeWriter1._quotes.length
-              quoteCharacterIndex = 0
-              isClearing = false
-              isAnswer = false
-              setTimeout(() => TypeWriter1._write(quoteIndex, quoteCharacterIndex, isClearing, isAnswer), 1500)
-            }
-          }
-        }
-
-        /**
-        * Starts the typing effect.
-        */
-        static initialize () {
-          setTimeout(() => TypeWriter1._write(0, 0, false, false), 3000)
-        }
-      }
-
-      TypeWriter1.initialize()
-    </script>
-  </body>
-
-  </html>
+                        var winTop = $(window).scrollTop();
+                        if (pos < winTop + 600) {
+                          $(this).addClass("slide");
+                        }
+                      });
+                    });
+                  })
+                  </script>
+<script src="assets/js/particles.js" type="8058bd7d4df28496fff0828c-text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/2448a7bd/cloudflare-static/rocket-loader.min.js" data-cf-nonce="8058bd7d4df28496fff0828c-" defer=""></script></html>
