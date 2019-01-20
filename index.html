@@ -379,7 +379,7 @@
     </div>
 
     <script>
-    $('.entry').waypoint(function() {
+      $(document).ready(function(){
 
         startAnimation();
 
@@ -394,7 +394,8 @@
 
           });
         }
-});
+      });
+
       class TypeWriter {
         static get _quotes () {
           return [
