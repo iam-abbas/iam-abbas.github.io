@@ -309,8 +309,8 @@ animation-direction: alternate;
   position: relative;
   border-radius: 3px;
   overflow: hidden;
-  width: calc(100% - 200px);
-  height: calc(100% - 1000px);
+  width: 250px;
+  height: 250px;
   transition: transform 300ms linear-out;
 }
 .fancy-card .top1{
