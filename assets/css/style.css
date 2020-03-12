@@ -250,6 +250,7 @@
      }
      #about {
          margin-top: 80px;
+         margin-bottom: 80px;
      }
      .desc {
          padding: 0;
@@ -260,6 +261,10 @@
  }
 
  @media only screen and (max-width: 770px) {
+     nav {
+         padding-right: 20px !important;
+         padding-left: 20px !important;
+     }
      .polygon-bg {
          padding: 0;
          margin-top: 100px;
