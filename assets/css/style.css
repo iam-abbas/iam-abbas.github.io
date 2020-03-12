@@ -243,6 +243,75 @@
      -webkit-text-fill-color: transparent;
  }
 
+ .square {
+     position: absolute;
+ }
+
+ .sq-1 {
+     animation: left-right-basic 7s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+     height: 200px;
+     width: 200px;
+     background: #8383ff29;
+     top: -100px;
+     border-radius: 20px;
+     margin: 20px;
+ }
+
+ .sq-2 {
+     animation: left-right-basic 9s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+     height: 100px;
+     width: 100px;
+     background: linear-gradient(45deg, #1E3BFB, #B2A4FF);
+     opacity: 0.3;
+     border-radius: 20px;
+     margin: 200px;
+     margin-left: 30%;
+ }
+
+ .sq-3 {
+     animation: left-right-basic 6s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+     height: 150px;
+     width: 150px;
+     background: #1d2975;
+     opacity: 0.5;
+     border-radius: 20px;
+     margin-top: 430px;
+     margin-left: 10%;
+ }
+
+ .sq-4 {
+     animation: left-right-basic 8s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+     height: 160px;
+     width: 160px;
+     background: #8364fd;
+     opacity: 0.3;
+     border-radius: 20px;
+     margin: 200px;
+     margin-left: 80%;
+ }
+
+ .sq-5 {
+     animation: left-right-basic 12s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+     height: 50px;
+     width: 50px;
+     background: #B2A4FF;
+     opacity: 0.3;
+     border-radius: 8px;
+     margin-top: 600px;
+     margin-left: 30%;
+ }
+
+ .sq-6 {
+     animation: left-right-basic 11s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+     height: 240px;
+     width: 240px;
+     background: #B2A4FF;
+     opacity: 0.1;
+     border-radius: 20px;
+     margin-top: 600px;
+     margin-left: 60%;
+ }
+
  @media only screen and (max-width: 990px) {
      nav {
          color: #fff;
@@ -258,6 +327,9 @@
      .name {
          padding: 0;
      }
+     .square {
+         display: none;
+     }
  }
 
  @media only screen and (max-width: 770px) {
@@ -268,5 +340,17 @@
      .polygon-bg {
          padding: 0;
          margin-top: 100px;
+     }
+ }
+
+ @keyframes left-right-basic {
+     0% {
+         left: 0px;
+     }
+     50% {
+         left: 100px;
+     }
+     100% {
+         left: 0px;
      }
  }
